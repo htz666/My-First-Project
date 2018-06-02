@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.htz.samplefragment.fragments.CameraImportFragment;
+import com.htz.samplefragment.fragments.FrameFragment;
 import com.htz.samplefragment.fragments.GalleryFragment;
 import com.htz.samplefragment.fragments.ShareFragment;
 import com.htz.samplefragment.fragments.SlideShowFragment;
@@ -134,6 +135,18 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_send) {
+            ShareFragment shareFragment = new ShareFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_frame, shareFragment)
+                    .addToBackStack(null)
+                    .commit();
+
+        } else if (id == R.id.nav_frame) {
+            FrameFragment frameFragment = new FrameFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_frame, frameFragment)
+                    .addToBackStack(null)
+                    .commit();
 
         }
 
